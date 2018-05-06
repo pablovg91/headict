@@ -11,4 +11,8 @@ class Articulo extends Model
     {
         return $this->belongsToMany('App\Categoria', 'articulo_categoria');
     }
+    public function tipo()
+    {
+        return $this->belongsTo('App\Tipo');
+    }
 }

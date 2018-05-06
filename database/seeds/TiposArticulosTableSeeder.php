@@ -12,7 +12,7 @@ class TiposArticulosTableSeeder extends Seeder
     public function run()
     {
         // Uncomment the below to wipe the table clean before populating
-        DB::table('Tipos_articulos')->delete();
+        DB::table('Tipos')->delete();
 
         $tipos_articulos = array(
             ['id' => 1, 'nombre' => 'gorro', 'descripcion' => 'Artículos de gorros', 'created_at' => new DateTime, 'updated_at' => new DateTime],
@@ -21,6 +21,6 @@ class TiposArticulosTableSeeder extends Seeder
         );
 
         // Uncomment the below to run the seeder
-        DB::table('Tipos_articulos')->insert($tipos_articulos);
+        DB::table('Tipos')->insert($tipos_articulos);
     }
 }

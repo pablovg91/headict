@@ -19,8 +19,8 @@ class CreateArticulosTable extends Migration
             $table->string('nombre');
             $table->float('precio', 6, 2);
             $table->integer('stock');
-            $table->integer('tipo_articulo')->unsigned()->default(0);
-            $table->foreign('tipo_articulo')->references('id')->on('tipo-articulo');
+            $table->integer('tipo_id')->unsigned()->default(0);
+            $table->foreign('tipo_id')->references('id')->on('tipos');
             $table->timestamps();
         });
     }

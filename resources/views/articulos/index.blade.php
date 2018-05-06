@@ -10,7 +10,13 @@
     @else
         <ul>
             @foreach( $articulos as $articulo )
-                <li>{{ $articulo->nombre }}</li>
+                <li>{{ $articulo->nombre }}
+
+                    @if ($articulo->tipo )
+                        - {{ $articulo->tipo->nombre }}
+                    @endif
+
+                </li>
 
                 @if ( !$articulo->categorias->count() )
                     El artículo no tiene categorias
