@@ -17,6 +17,7 @@ class CreateArticulosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->float('precio', 6, 2);
+            $table->string('color');
             $table->timestamps();
         });
     }
