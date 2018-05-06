@@ -10,7 +10,7 @@
     @else
         <ul>
             @foreach( $articulos as $articulo )
-                <li>{{ $articulo->nombre }}
+                <li><a href="{{ route('articulos.show', $articulo->id) }}">{{ $articulo->nombre }}</a>
 
                     @if ($articulo->tipo )
                         - {{ $articulo->tipo->nombre }}
