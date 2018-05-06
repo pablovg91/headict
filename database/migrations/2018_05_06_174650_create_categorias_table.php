@@ -21,10 +21,10 @@ class CreateCategoriasTable extends Migration
         });
         Schema::create('articulo_categoria', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_articulo')->unsigned();
-            $table->integer('id_categoria')->unsigned();
-            $table->foreign('id_articulo')->references('id')->on('articulos')->onDelete('cascade');
-            $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade');
+            $table->integer('articulo_id')->unsigned();
+            $table->integer('categoria_id')->unsigned();
+            $table->foreign('articulo_id')->references('id')->on('articulos')->onDelete('cascade');
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
             $table->timestamps();
         });
     }

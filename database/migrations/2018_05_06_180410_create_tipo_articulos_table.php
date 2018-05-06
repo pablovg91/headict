@@ -13,10 +13,9 @@ class CreateTipoArticulosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo-articulo', function (Blueprint $table) {
+        Schema::create('tipos_articulos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('tipo');
             $table->string('descripcion');
             $table->timestamps();
         });
@@ -29,6 +28,6 @@ class CreateTipoArticulosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_articulos');
+        Schema::dropIfExists('tipos_articulos');
     }
 }

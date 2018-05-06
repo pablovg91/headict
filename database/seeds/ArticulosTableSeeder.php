@@ -15,9 +15,9 @@ class ArticulosTableSeeder extends Seeder
         DB::table('Articulos')->delete();
 
         $articulos = array(
-            ['id' => 1, 'nombre' => 'Articulo 1', 'precio' => 9.99, 'color' => 'azul', 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['id' => 2, 'nombre' => 'Articulo 2', 'precio' => 20.50, 'color' => 'verde', 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['id' => 3, 'nombre' => 'Articulo 3', 'precio' => 30.00, 'color' => 'rojo', 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 1, 'nombre' => 'Knox', 'precio' => 9.99, 'stock' => 5, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 2, 'nombre' => 'Performed', 'precio' => 20.50, 'stock' => 5, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 3, 'nombre' => 'Barrow', 'precio' => 30.00, 'stock' => 10, 'created_at' => new DateTime, 'updated_at' => new DateTime],
         );
 
         // Uncomment the below to run the seeder
