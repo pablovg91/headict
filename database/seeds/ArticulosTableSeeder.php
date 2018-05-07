@@ -15,9 +15,22 @@ class ArticulosTableSeeder extends Seeder
         DB::table('Articulos')->delete();
 
         $articulos = array(
-            ['id' => 1, 'nombre' => 'Knox', 'precio' => 9.99, 'stock' => 5, 'tipo_id' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['id' => 2, 'nombre' => 'Performed', 'precio' => 20.50, 'stock' => 5, 'tipo_id' => 2, 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['id' => 3, 'nombre' => 'Barrow', 'precio' => 30.00, 'stock' => 10, 'tipo_id' => 0, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            //GORROS
+            ['id' => 1, 'nombre' => 'Knox - aero', 'precio' => 9.99, 'stock' => 5, 'tipo_id' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 2, 'nombre' => 'Knox - terra', 'precio' => 9.99, 'stock' => 5, 'tipo_id' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 3, 'nombre' => 'Knox - fire', 'precio' => 9.99, 'stock' => 5, 'tipo_id' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 4, 'nombre' => 'Knox - water', 'precio' => 9.99, 'stock' => 5, 'tipo_id' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+
+            ['id' => 5, 'nombre' => 'Performed - aero', 'precio' => 20.00, 'stock' => 10, 'tipo_id' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 6, 'nombre' => 'Performed - terra', 'precio' => 20.00, 'stock' => 10, 'tipo_id' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 7, 'nombre' => 'Performed - fire', 'precio' => 20.00, 'stock' => 20, 'tipo_id' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 8, 'nombre' => 'Performed - water', 'precio' => 20.00, 'stock' => 20, 'tipo_id' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+
+            //GORRAS
+            ['id' => 9, 'nombre' => 'Barrow - model 1', 'precio' => 30.00, 'stock' => 10, 'tipo_id' => 2, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 10, 'nombre' => 'Barrow - model 2', 'precio' => 30.00, 'stock' => 10, 'tipo_id' => 2, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 11, 'nombre' => 'Barrow - model 3', 'precio' => 30.00, 'stock' => 10, 'tipo_id' => 2, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+
         );
 
         // Uncomment the below to run the seeder

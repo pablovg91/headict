@@ -8,6 +8,10 @@
     @if ( !$articulo )
         No existe ese articulo
     @else
-        {{ $articulo->nombre }}
+        <div class="product_cont col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="product col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p class="product_name">{{ $articulo->nombre }}</p>
+            </div>
+        </div>
     @endif
 @endsection

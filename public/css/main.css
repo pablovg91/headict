@@ -1,0 +1,125 @@
+/* MAIN RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", Arial, serif;
+}
+
+/* END - MAIN RESET */
+
+/********************************************************************************/
+
+/* POPUP_OFFERS */
+
+#popup_offers{
+    height: 50px;
+    background-color: #db5752;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+/* END - POPUP_OFFERS */
+
+/********************************************************************************/
+
+/* SIDEBAR */
+
+#sidebar{
+    height: 40px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+#sidebar ul{
+    list-style: none;
+}
+#sidebar ul li{
+    float: right;
+    padding: 0 20px;
+}
+
+/* END - SIDEBAR */
+
+/********************************************************************************/
+
+/* SLIDER_MAIN */
+
+#slider_main{
+    background-color: blue;
+    height: 350px;
+}
+
+/* END - SLIDER_MAIN */
+
+/********************************************************************************/
+
+/* MENU_CONTENT */
+#menu_content{
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+#menu_content ul{
+    list-style: none;
+    margin: auto;
+}
+#menu_content ul li{
+    float: left;
+    border-right: 1px solid grey;
+    padding: 0 20px;
+}
+
+/* END - MENU_CONTENT */
+
+
+/********************************************************************************/
+
+/* CONTENT */
+
+.product_cont{
+    padding:  5px;
+}
+.product_name{
+    font-size: 20px;
+}
+.product{
+    background-color: grey;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    color: white;
+    padding: 40px;
+}
+.product a{
+    color: white;
+}
+.product a span{
+    font-weight: bold;
+}
+.list_tags{
+    list-style: none;
+    min-height: 25px;
+}
+.list_tags li{
+    float: left;
+    padding-right: 10px;
+}
+.list_tags li:before{
+    content: '#';
+}
+
+.precio{
+    font-size: 20px;
+    float: right;
+}
+/* END - CONTENT */

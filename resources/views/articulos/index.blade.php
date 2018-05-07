@@ -4,31 +4,37 @@
 
 
 @section('content')
+
     <h2>Articulos</h2>
+
     @if ( !$articulos->count() )
         No existen articulos
     @else
-        <ul>
-            @foreach( $articulos as $articulo )
-                <li><a href="{{ route('articulos.show', $articulo->id) }}">{{ $articulo->nombre }}</a>
 
-                    @if ($articulo->tipo )
-                        - {{ $articulo->tipo->nombre }}
-                    @endif
+            <section id="products col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                @foreach( $articulos as $key => $articulo )
 
-                </li>
+                    <div class="product_cont col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="product col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <a class="product_name" href="{{ route('articulos.show', $articulo->id) }}">
+                                <span>{{ $articulo->nombre }}</span>
+                                @if ($articulo->tipo )
+                                    | {{ $articulo->tipo->nombre }}
+                                @endif
+                            </a>
 
-                @if ( !$articulo->categorias->count() )
-                    El artículo no tiene categorias
-                @else
-                    <ul>
-                        @foreach( $articulo->categorias as $categoria )
-                            <li>{{ $categoria->nombre }}</li>
-                        @endforeach
-                    </ul>
-                @endif
+                            @if ( $articulo->categorias->count() )
+                                <ul class="list_tags">
+                                    @foreach( $articulo->categorias as $categoria )
+                                        <li><a href="{{ route('categorias.show', $categoria->id) }}">{{ $categoria->nombre }}</a></li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                            <p class="precio">{{ $articulo->precio }} €</p>
+                        </div>
+                    </div>
+                @endforeach
+            </section>
 
-            @endforeach
-        </ul>
     @endif
 @endsection
