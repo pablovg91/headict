@@ -32,10 +32,10 @@
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">headict</div>
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                     <ul>
+                        <li><a href=""><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
                         <li>Menu 1</li>
                         <li>Menu 2</li>
                         <li>Menu 3</li>
-                        <li>Menu 4</li>
                     </ul>
                 </div>
             </div>
