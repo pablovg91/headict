@@ -15,4 +15,8 @@ class Articulo extends Model
     {
         return $this->belongsTo('App\Tipo');
     }
+    public function detalles()
+    {
+        return $this->hasMany('App\Detalle');
+    }
 }

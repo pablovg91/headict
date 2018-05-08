@@ -25,15 +25,40 @@ class CarritoController extends Controller
     //redirigimos al controlador de pago
     public function checkout(Request $request)
     {
-        //metodo pago
+        //req
+        $articulos = $request->input('articulos');
         $metodo_pago = $request->input('metodo_pago');
 
-        //PEDIDO INSERT
+        //si existen articulos
+        if(isset($articulos)) {
 
-        //PASARELA PAGO
-        //paypal
-        $paypalController = new PaypalController();
-        return $paypalController->processPayment($request);
+            //CREACION CHECKOUT
+            $checkout = new App\Checkout();
+            $checkout->save();
+            $request->request->set('checkout_id',$checkout->id);
+
+            //CREACION DETALLES
+            foreach ($articulos as $articulo) {
+                $cantidad = $articulo["cantidad"];
+                $articulo = App\Articulo::findOrFail($articulo["product_id"]);
+
+                //DETALLE
+                $detalle = new App\Detalle();
+                $detalle->checkout_id = $checkout->id;
+                $detalle->articulo_id = $articulo->id;
+                $detalle->cantidad = $cantidad;
+                $detalle->precio = $articulo->precio;
+                $detalle->save();
+            }
+
+            //PASARELA PAGO
+            $paypalController = new PaypalController();
+            return $paypalController->processPayment($request);
+
+        }else{
+            //si hubo algun problema
+            return view('carrito.error');
+        }
     }
 
 

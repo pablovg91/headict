@@ -15,17 +15,12 @@ class CreateCheckoutsTable extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->increments('id');
-            //articulo_id
-            $table->integer('articulo_id')->unsigned();
-            $table->foreign('articulo_id')->references('id')->on('articulos');
-            //cantidad
-            $table->integer('cantidad')->unsigned();
-            //precio
-            $table->float('precio', 6, 2);
 
             //datos-pago
-            $table->string('transation_id')->nullable();
+            $table->string('payment_id')->nullable();
             $table->string('payment_method')->nullable();
+            $table->string('transation_id')->nullable();
+            //datos-cliente
             $table->string('payer_email')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();

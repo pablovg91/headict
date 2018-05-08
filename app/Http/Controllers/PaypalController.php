@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Checkout;
 use Illuminate\Http\Request;
 use App\Articulo;
 use Illuminate\Support\Facades\Redirect;
@@ -18,6 +19,7 @@ class PaypalController extends Controller
     {
         //req
         $articulos = $request->input('articulos');
+        $checkout_id = $request->input('checkout_id');
 
         //isset req-articulos
         if(isset($articulos)){
@@ -67,18 +69,26 @@ class PaypalController extends Controller
             $redirectUrls = new \PayPal\Api\RedirectUrls();
             $redirectUrls->setReturnUrl("http://localhost:8000/paypal/success")
                 ->setCancelUrl("http://localhost:8000/paypal/cancel");
-            //Pago
+            //Pago - set
             $payment = new \PayPal\Api\Payment();
             $payment->setIntent('sale')
                 ->setPayer($payer)
                 ->setTransactions(array($transaction))
                 ->setRedirectUrls($redirectUrls);
 
-            // Redirect a Paypal
+            // Creación de pago
             try {
                 $payment->create($apiContext);
-                return Redirect::to($payment->getApprovalLink());
                 //echo $payment;
+
+                // update checkout con payment_id
+                $checkout = Checkout::find($checkout_id);
+                $checkout->payment_id = $payment->getId();
+                $checkout->payment_method = $payment->getPayer()->payment_method;
+                $checkout->save();
+
+                //Redirect a Paypal
+                return Redirect::to($payment->getApprovalLink());
             }
             catch (\PayPal\Exception\PayPalConnectionException $ex) {
                 echo $ex->getData();
