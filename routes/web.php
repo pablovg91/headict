@@ -20,3 +20,14 @@ Route::get('/', 'ArticulosController@index');
 Route::resource('articulos', 'ArticulosController');
 
 Route::resource('categorias', 'CategoriasController');
+
+
+//carrito - checkout
+Route::get('/cart', 'CarritoController@index');
+Route::get('/checkout', 'CarritoController@startCheckout');
+Route::post('/checkout', 'CarritoController@checkout');
+
+
+//PAYPAL
+
+Route::get('/paypal/success', 'PaypalController@success');
