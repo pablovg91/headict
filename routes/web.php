@@ -23,9 +23,10 @@ Route::resource('categorias', 'CategoriasController');
 
 
 //carrito - checkout
-Route::get('/cart', 'CarritoController@index');
-Route::get('/checkout', 'CarritoController@startCheckout');
+Route::get('/cart', 'CarritoController@index')->name('cart');
+Route::get('/checkout', 'CarritoController@startCheckout')->name('startCheckout');
 Route::post('/checkout', 'CarritoController@checkout');
+
 
 
 //PAYPAL

@@ -9,5 +9,5 @@
     <p>Aki van todos los productos que tengas en el carrito de la compra, cargados por JS</p>
 
 
-    <a href="{{route('')}}"></a>
+    <a href="{{route('startCheckout')}}">Comprar</a>
 @endsection

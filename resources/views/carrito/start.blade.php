@@ -16,13 +16,13 @@
         <input type="hidden" name="metodo_pago" value="paypal">
 
         <input type="hidden" name="articulos[0][product_id]" value="1">
-        <input type="hidden" name="articulos[0][cantidad]" value="2">
+        <input type="hidden" name="articulos[0][cantidad]" value="1">
 
         <input type="hidden" name="articulos[1][product_id]" value="2">
         <input type="hidden" name="articulos[1][cantidad]" value="1">
 
         <input type="hidden" name="articulos[2][product_id]" value="3">
-        <input type="hidden" name="articulos[2][cantidad]" value="3">
+        <input type="hidden" name="articulos[2][cantidad]" value="1">
 
         <input type="submit" value="Comprar con PayPal">
     </form>
