@@ -29,7 +29,8 @@ class CarritoController extends Controller
         $articulos = $request->input('articulos');
         $metodo_pago = $request->input('metodo_pago');
 
-        //si existen articulos
+
+        //si existen articulos && product_id -> vigente
         if(isset($articulos)) {
 
             //CREACION CHECKOUT

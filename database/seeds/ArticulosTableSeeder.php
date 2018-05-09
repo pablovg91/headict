@@ -31,6 +31,8 @@ class ArticulosTableSeeder extends Seeder
             ['id' => 10, 'nombre' => 'Barrow - model 2', 'precio' => 30.00, 'stock' => 10, 'tipo_id' => 2, 'created_at' => new DateTime, 'updated_at' => new DateTime],
             ['id' => 11, 'nombre' => 'Barrow - model 3', 'precio' => 30.00, 'stock' => 10, 'tipo_id' => 2, 'created_at' => new DateTime, 'updated_at' => new DateTime],
 
+            ['id' => 12, 'nombre' => 'BUY IT - test model 1', 'precio' => 0.10, 'stock' => 100, 'tipo_id' => 2, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+
         );
 
         // Uncomment the below to run the seeder

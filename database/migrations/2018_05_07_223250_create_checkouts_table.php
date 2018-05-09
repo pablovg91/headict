@@ -19,7 +19,8 @@ class CreateCheckoutsTable extends Migration
             //datos-pago
             $table->string('payment_id')->nullable();
             $table->string('payment_method')->nullable();
-            $table->string('transation_id')->nullable();
+            $table->boolean('payment_done')->default(false);
+            $table->string('transaction_id')->nullable();
             //datos-cliente
             $table->string('payer_email')->nullable();
             $table->string('first_name')->nullable();
